@@ -1,0 +1,24 @@
+env: "atari"
+
+env_args: 
+  env_id: "ALE/Breakout-v5"
+  stack_size: 4
+  max_episode_steps: 1000  # default max_epsidoe_steps: float("inf")
+  scale_factor: 4.0
+  speed: 2.0
+
+runner: "atari_episode"
+#runner: "atari_parallel"
+#batch_size_run: 8  # Number of environments to run in parallel
+
+agent: "cnn"
+mac: "atari_mac"
+
+test_greedy: True
+test_nepisode: 32
+test_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000 # Log runner stats (not test stats) every {} timesteps
+learner_log_interval: 10000 # Log training stats every {} timesteps
+save_model_interval: 100000
+t_max: 30000000 ##200000000  # 2e8
